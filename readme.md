@@ -11,9 +11,11 @@ Bem-vindo ao meu projeto de jogo estilo plataforma inspirado no clássico Mario!
 
 Nesse jogo seu objetivo sera guiar o personagem por aventuras cheias de diversão e desafios para jogadores de todas as idades. Pule obstáculos, colete moedas e power-ups, derrote inimigos e avance para novas fases. Experimente uma fusão de ação, mistérios e quebra-cabeças ao navegar por níveis repletos de segredos.
 
-![Descrição da Imagem](caminho/para/imagem.jpg)
+![Screenshot01](https://github.com/marina-barbosa/Um-Jogo/blob/master/imagens/Screenshot_1.png)
 
-![Descrição da Imagem](caminho/para/imagem.jpg)
+
+![Screenshot02](https://github.com/marina-barbosa/Um-Jogo/blob/master/imagens/Screenshot_2.png)
+
 
 
 ## Funcionalidades Atuais
@@ -32,7 +34,7 @@ Nesse jogo seu objetivo sera guiar o personagem por aventuras cheias de diversã
 
 - Mecânica de colete de moedas para ganhar mais pontos.
 
-- Colaboração: Desenvolvido em colaboração com [Nome da Colaboradora].
+- Colaboração: Desenvolvido em colaboração com [Nanne Santin](https://github.com/NanneSantin).
 
 ## Como Executar o Jogar
 
