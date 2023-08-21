@@ -31,7 +31,7 @@ let tamanho = 64;
 let somWin;
 let somLose;
 let somLevel01;
-let somTemaOn = false; // liga e desliga musica tema
+let somTemaOff = false; // liga e desliga musica tema
 
 
 
@@ -204,6 +204,8 @@ function draw() {
     if (mouseIsPressed == true) {
         if (stage == 0) {
             mouseIsPressed = false
+            somLevel01.play();
+            somTemaOff = false;
             stage = 1; //click starta o jogo
         } else if (stage == 4) {
             mouseIsPressed = false
@@ -260,10 +262,10 @@ function menu() {
 
     text('CLICK to START', width / 2, 530);
 
-    if (!somTemaOn) {
-        somLevel01.play();
-        somTemaOn = true;
-    }
+    // if (!somTemaOff) {
+    //     somLevel01.play();
+    //     somTemaOff = false;
+    // }
 
 
 
@@ -333,14 +335,14 @@ function level01() {
 
     if (score >= 4) { // win
         somLevel01.stop();
-        somTemaOn = false;
+        somTemaOff = true;
         somWin.play();
         stage = 4;
     }
 
     if (vida <= 0 || tempoGame >= tempoLimite) { // lose
         somLevel01.stop();
-        somTemaOn = false;
+        somTemaOff = true;
         somLose.play();
         stage = 5;
     }
