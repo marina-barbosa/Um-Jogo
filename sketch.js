@@ -30,24 +30,43 @@ let stage = 0;
 let tamanho = 64;
 let somWin;
 let somLose;
+let somLevel01;
+let somTemaOn = false; // liga e desliga musica tema
+
+
 
 // pontos e vidas
 let score = 0;
-let vida = 3;
+let vida = 1;
 
 // tempo
 let tempoTotal;
 let tempoMenu;
 let tempoGame;
-let tempoLimite = 10;
+let tempoLimite = 10; // TEMPO
+
+//GRAVIDADE
+let gravidade = 1;
+let velocidadeG = 0.1;
+let caindo = 5; //deve ser igual velocidade
+
+// pulo
+let chaoH = 426;//426
+let tetoH = 5;
+let somPulo;
+let jumping = false;
+let alturaPulo;
+
 
 
 
 function preload() {
-    somMoeda = loadSound("sound/coinsound.wav")
-    somPena = loadSound("sound/penasound.mp3")
-    somWin = loadSound("sound/you-win.wav")
-    somLose = loadSound("sound/Damage-Sound.mp3")
+    somMoeda = loadSound('sound/coinsound.wav')
+    somPena = loadSound('sound/penasound.mp3')
+    somWin = loadSound('sound/you-win.wav')
+    somLose = loadSound('sound/Damage-Sound.mp3')
+    somLevel01 = loadSound('sound/music-theme.mp3');
+    somPulo = loadSound('sound/pulo.mp3');
 
     personagem = loadImage('imagens/mariodir.png');
     night_sky = loadImage('imagens/night-sky.png');
@@ -81,7 +100,8 @@ function setup() {
     createCanvas(929, 576);
     rectMode(CENTER);
     textAlign(CENTER);
-    //imageMode(CENTER);
+    //imageMode(CENTER);    
+
 
     blocos = [
         { x: 120, y: 232 },
@@ -109,6 +129,8 @@ function setup() {
 
 function draw() {
 
+
+
     if (stage == 0) {
         menu();
     }
@@ -129,6 +151,9 @@ function draw() {
     }
 
 
+    if (!marioVoa) {
+        gravitacao();
+    }
 
     tempoTotal = millis(); //tempo começa
 
@@ -159,6 +184,22 @@ function draw() {
     if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
         moveRight();
     }
+    // PULO
+    // if (keyIsDown(32)) {
+    //     jump = true;
+    //     //jumpContador++;
+    // } else {
+    //     jump = false;
+    // }
+
+    if (keyIsDown(32) && !jumping) {
+        jumping = true;
+        pular();
+    }
+    //jumpContador++;
+
+
+
 
     if (mouseIsPressed == true) {
         if (stage == 0) {
@@ -172,8 +213,13 @@ function draw() {
             stage = 0; // volta pro menu
         }
     }
-
-
+    // coordenada verde na tela
+    // let mouseXCoord = mouseX;
+    // let mouseYCoord = mouseY;
+    // noStroke();
+    // fill(0, 255, 0);
+    // textSize(20);
+    // text(`X: ${mouseXCoord}, Y: ${mouseYCoord}`, 100, 200);
 
 
 
@@ -207,12 +253,17 @@ function menu() {
     textSize(40);
     text('Desenvolvido por Marina 2023', width / 2, 210);
 
-    //instructions
+    //instrucoes
     text('Como jogar:', width / 2, 330);
     text(`Use A S D W para mover`, width / 2, 380);
     //text('SPACE para pular', width / 2, 430);
 
     text('CLICK to START', width / 2, 530);
+
+    if (!somTemaOn) {
+        somLevel01.play();
+        somTemaOn = true;
+    }
 
 
 
@@ -221,6 +272,10 @@ function menu() {
 
 
 function level01() {
+    if (mouseIsPressed) {
+        andarX = mouseX;
+        andarY = mouseY
+    }
     background(2, 96, 188);
     //fundo ceu
     image(night_sky, 0, 0, width, height); //541, 208 
@@ -277,16 +332,21 @@ function level01() {
 
 
     if (score >= 4) { // win
+        somLevel01.stop();
+        somTemaOn = false;
         somWin.play();
         stage = 4;
     }
 
     if (vida <= 0 || tempoGame >= tempoLimite) { // lose
+        somLevel01.stop();
+        somTemaOn = false;
         somLose.play();
         stage = 5;
     }
 
     image(personagem, andarX, andarY, 90, 90);
+
 
 
 
@@ -358,6 +418,9 @@ function colisao(objeto) {
     }
 }
 
+
+
+
 // COLISOES COM BLOCOS VERTICAL
 function colisaoComBlocos() {
     for (let i = 0; i < blocos.length; i++) {
@@ -393,6 +456,35 @@ function colisaoComBlocos2() {
         }
     }
 }
+
+
+function gravitacao() {
+    if (!jumping) {
+        if (andarY <= chaoH) {
+            andarY += 5;
+            colisaoComBlocos()
+        }
+    }
+}
+
+function pular() {
+    if (jumping) {
+        alturaPulo = 0;
+        while (alturaPulo <= 10 && andarY > tetoH) {
+            andarY -= 2;
+            alturaPulo += 2;
+            console.log(alturaPulo)
+            console.log(jumping)
+            console.log(andarY)
+        }
+        jumping = false;
+        alturaPulo = 0;
+
+    }
+}
+
+
+
 
 // FUNÇÕES MOVER
 function moveUp() {
@@ -437,5 +529,10 @@ function moveRight() {
     if (andarX > 840) {
         andarX = 840
     }
+
+
+
 }
+
+
 
