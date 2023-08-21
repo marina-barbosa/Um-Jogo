@@ -36,12 +36,10 @@ Nesse jogo seu objetivo sera guiar o personagem por aventuras cheias de diversã
 
 - Colaboração: Desenvolvido em colaboração com [Nanne Santin](https://github.com/NanneSantin).
 
-## Como Executar o Jogar
+## Como Executar e Jogar
 
-1. Clone este repositório para sua máquina local.
-2. Certifique-se de ter uma extensão 'Live Server' instalada no Visual Studio Code, para aproveitar a opção 'Go Live'.
-3. Abra o arquivo `index.html` e rode com Go Live.
-4. Use as teclas A, W, S, D para se mover. Pule pressionando a tecla SPACE. Colete power-ups para ganhar vantagens, e colete todas as moedas antes do tempo se esgotar.
+1. [Clique aqui](https://marina-barbosa.github.io/Um-Jogo/) para abrir o jogo.
+2. Use as teclas A, W, S, D para se mover. Pule pressionando a tecla SPACE. Colete power-ups para ganhar vantagens, e colete todas as moedas antes do tempo se esgotar.
 
 
 ## Bugs Conhecidos

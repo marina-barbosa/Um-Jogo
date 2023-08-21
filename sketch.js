@@ -61,11 +61,11 @@ let alturaPulo;
 
 
 function preload() {
+    somLevel01 = loadSound('sound/music-theme.mp3');
     somMoeda = loadSound('sound/coinsound.wav')
     somPena = loadSound('sound/penasound.mp3')
     somWin = loadSound('sound/you-win.wav')
     somLose = loadSound('sound/Damage-Sound.mp3')
-    somLevel01 = loadSound('sound/music-theme.mp3');
     somPulo = loadSound('sound/pulo.mp3');
 
     personagem = loadImage('imagens/mariodir.png');
@@ -100,7 +100,7 @@ function setup() {
     createCanvas(929, 576);
     rectMode(CENTER);
     textAlign(CENTER);
-    //imageMode(CENTER);    
+    //imageMode(CENTER);
 
 
     blocos = [
