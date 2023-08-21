@@ -272,10 +272,10 @@ function menu() {
 
 
 function level01() {
-    if (mouseIsPressed) {
-        andarX = mouseX;
-        andarY = mouseY
-    }
+    //if (mouseIsPressed) {
+    //    andarX = mouseX;
+    //    andarY = mouseY
+    //}
     background(2, 96, 188);
     //fundo ceu
     image(night_sky, 0, 0, width, height); //541, 208 
