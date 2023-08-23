@@ -4,17 +4,23 @@
 
 Bem-vindo ao meu projeto de jogo estilo plataforma inspirado no clássico Mario! Este jogo está no começo de seu desenvolvimento, utilizando a biblioteca p5.js e os conhecimentos que adquiri através do curso da Cubos Academy.
 
-![Static Badge](https://img.shields.io/badge/projeto-em_desenvolvimento-green)
+![Static Badge](https://img.shields.io/badge/PROJETO-EM_DESENVOLVIMENTO-green)
 
 
 ## Sobre o Jogo
 
 Nesse jogo seu objetivo sera guiar o personagem por aventuras cheias de diversão e desafios para jogadores de todas as idades. Pule obstáculos, colete moedas e power-ups, derrote inimigos e avance para novas fases. Experimente uma fusão de ação, mistérios e quebra-cabeças ao navegar por níveis repletos de segredos.
+<div align="center">
+  
+ <img src="https://github.com/marina-barbosa/Um-Jogo/blob/master/captura-de-tela-gif.gif" width="900">
 
-![Screenshot01](https://github.com/marina-barbosa/Um-Jogo/blob/master/imagens/Screenshot_1.png)
 
 
-![Screenshot02](https://github.com/marina-barbosa/Um-Jogo/blob/master/imagens/Screenshot_2.png)
+ <img src="https://github.com/marina-barbosa/Um-Jogo/blob/master/imagens/Screenshot_2.png" width="900">
+
+
+ </div>
+
 
 
 
@@ -38,7 +44,7 @@ Nesse jogo seu objetivo sera guiar o personagem por aventuras cheias de diversã
 
 ## Como Executar e Jogar
 
-1. [Clique aqui](https://marina-barbosa.github.io/Um-Jogo/) para abrir o jogo.
+1. [Clique aqui](https://marina-barbosa.github.io/Um-Jogo/) para jogar agora!
 2. Use as teclas A, W, S, D para se mover. Pule pressionando a tecla SPACE. Colete power-ups para ganhar vantagens, e colete todas as moedas antes do tempo se esgotar.
 
 
